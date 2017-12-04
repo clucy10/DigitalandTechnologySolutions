@@ -26,7 +26,7 @@ ATTRIBUTES:
         crimes_in_radius to find the crimes within the radius of the geoposition.
     
     CR_LIST (list): a nested list [[row], [row], [row]] of all the crimes within the
-        radius of the postcode geoposition. This is passed to the plot_map function.
+        radius of the postcode geoposition. This is passed to the plot_graph function.
         
 TO DO:
     Validate the time_range.
@@ -37,7 +37,7 @@ TO DO:
 from compile_csvs import write_csv, month_list
 from postcode import centre_point
 from crimes_in_box import crimes_in_radius
-from plot_map import plot_map
+from plot_graph import plot_graph
 
 # these are hardcoded for testing purposes. These should be user inputs
 time_range = 3
@@ -55,4 +55,4 @@ POST_LON = post_data[1]
 
 CR_LIST = crimes_in_radius(POST_LAT, POST_LON, radius)
 
-plot_map(CR_LIST, postcode)
+plot_graph(CR_LIST, postcode)
