@@ -1,7 +1,7 @@
 from postcode import centre_point
 from crimes_in_radius import crimes_in_radius
-from postcode_validate import validatePostcode
-from validateDate2 import validateDate
+from postcode_validate import validate_postcode
+from validate_date import validate_date
 
 if __name__ == '__main__':
     """
@@ -12,9 +12,9 @@ if __name__ == '__main__':
     postcode = input("Please enter a postcode for the Devon and Cornwall area.")
     input_date = input("Please enter the date.")
     
-    date_valid, date = validateDate(input_date) #checks date
+    date_valid, date = validate_date(input_date) #checks date
     
-    if validatePostcode(postcode) and date_valid:  # checks for valid postcode
+    if validate_postcode(postcode) and date_valid:  # checks for valid postcode
         try:  # catches exemption of postcode not found
             post_data = centre_point(postcode, 'postcodes.csv') # gets centrepoint latlong
             postcode_lat = post_data[0]
