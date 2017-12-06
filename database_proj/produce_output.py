@@ -41,7 +41,7 @@ from plot_graph import plot_graph
 
 # these are hardcoded for testing purposes. These should be user inputs
 time_range = 3
-postcode = "EX4 4QJ"
+postcode = "PL1 1EA"
 radius = 1
 date = "03" # not used in this vers
 

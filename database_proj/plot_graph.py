@@ -42,7 +42,7 @@ def plot_graph(data, postcode):
         crime_types[value] = crime_types[value]/length * 100
 
     character_to_display = "*"
-    screen_width = 250
+    screen_width = 300
 
 
     def histoplot(cr_type, percent, max_width, character):
