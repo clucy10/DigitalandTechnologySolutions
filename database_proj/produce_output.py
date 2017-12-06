@@ -3,6 +3,8 @@ This module takes a time-range, radius and postcode to find all the crimes withi
 radius of that postcode over a time-range. This is outputted in a form of a histogram
 in the console.
 
+GIT TEST
+
 ATTRIBUTES:
     time_range (int): inputted by user. This is the number of months passed into the
         month_list function. For example, if this is set to 1, it will return the
