@@ -56,25 +56,24 @@ def validateDate(date):
     return valid, date
       
     
+if __name__ == "__main__":
+    # Main method not executed on import
     
-def test_valid():
-
-    validFormat = ["2016-01", "201602", "2012 04", "20161", "20165", "202012"]
-    invalidFormat = ["1234", "201614", "2016/01", "2016.01", "20160", "2016012"]
+    # Valid format dates
+    assert validate_date("2016-01") == True, "2016-01"
+    assert validate_date("201602") == True, "2016-02"
+    assert validate_date("2012 04") == True, "2012-04"
+    assert validate_date("20161") == True, "2016-01"
+    assert validate_date("20165") == True, "2016-05"
+    assert validate_date("202012") == True, "2020-12"
     
-    print("The given date string should only contian numbers, spaces or hyphen characters.")
-    print("If the string contains any other character it is invalid.")
-    print()
+    # Invalid format dates
+    assert validate_date("1234") == False, "1234"
+    assert validate_date("201614") == False, "201614"
+    assert validate_date("2016/01") == False, "2016/01"
+    assert validate_date("2016.01") == False, "2016.01"
+    assert validate_date("20160") == False, "20160"
+    assert validate_date("2016012") == False, "2016012"
     
-    for i in range(len(validFormat)):
-        validate, date = validateDate(validFormat[i])
-        print("Given date:", validFormat[i], "\nReturned date:", date)
-        print("Valid?:", validate)
-        print()
-        
-        
-    for j in range(len(invalidFormat)):
-        validate, date = validateDate(invalidFormat[j])
-        print("Given date:", invalidFormat[j], "\nReturned date:", date)
-        print("Valid?", validate)
-        print()
+    print("All tests run successfully!")
+    
