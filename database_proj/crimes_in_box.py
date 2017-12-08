@@ -25,10 +25,10 @@ def crimes_in_radius(post_lat, post_lon, radius):
         if row[3] != '':
             lat, lon = float(row[3]), float(row[2])
             if lat != '': # checks for no location
-                if (lat > lat_min) and (lat < lat_max):
-                    if (lon > lon_min) and (lon < lon_max):
+                if (lat >= lat_min) and (lat <= lat_max):
+                    if (lon >= lon_min) and (lon <= lon_max):
                         difference = distance((post_lat, post_lon), (lat, lon))
-                        if difference < radius:
+                        if difference <= radius:
                             crimes_list.append(row)
 
     return(crimes_list)
