@@ -38,21 +38,26 @@ from compile_csvs import write_csv, month_list
 from postcode import centre_point
 from crimes_in_box import crimes_in_radius
 from plot_map import plot_map
+from validate_date import validate_date
+from postcode_validate import validate_postcode
 
-# these are hardcoded for testing purposes. These should be user inputs
-time_range = 3
-postcode = "EX4 4QJ"
-radius = 1
-date = "03" # not used in this vers.
+time_range = input("Enter a time range (0-12 months)"
+postcode = input("Enter a postcode:")
+radius = input("Please choose a 1, 2 or 5 mile radius:")
+date = input("Enter a date in the format YYYY-MM:")
 
-MONTHS = month_list(time_range) # gets list of months for file names
+valid_date = validate_date(date) # can't implement any more than this at the moment as the variable isn't being used
+valid_postcode = validate_postcode(postcode)
+                   
+MONTHS = month_list(int(time_range)) # gets list of months for file names
 write_csv(MONTHS) # compile all the crimes into one file
 
-post_data = centre_point(postcode, 'postcodes.csv')
-
+if valid_postcode == True:
+    post_data = centre_point(postcode, 'postcodes.csv')
+                   
 POST_LAT = post_data[0]
 POST_LON = post_data[1]
 
-CR_LIST = crimes_in_radius(POST_LAT, POST_LON, radius)
+CR_LIST = crimes_in_radius(POST_LAT, POST_LON, int(radius))
 
 plot_map(CR_LIST, postcode)
