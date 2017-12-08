@@ -2,14 +2,11 @@ import math
 
 def bounding_box(latlng, radius):
     """
+    src: https://stackoverflow.com/questions/3182260/python-geocode-filtering-by-distance/3183539
     Passes postcode latlong and radius to find the maximum and minimum
-    coordinates. These will be returned to find all the crimes within this
-    bounding box and then work out which is within 1 mile.
-
-    The aim is to reduce the number of times the program will calulcate the
-    distance between the centrepoint and crime. This function will be done once
-    returning say 80 crimes instead of 1200 that will need to be calculated
-    individually.
+    longitude and latitude for the bounding box. The aim of this function is
+    to reduce the amount of times the haversine formula code is used as this
+    is the heaviest part of the program.
     """
     EARTH_R = 6371.009  # radius from center of the sphere in km
     lat, lng = latlng   # unpacks tuple
