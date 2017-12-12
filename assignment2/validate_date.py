@@ -1,7 +1,7 @@
 # validate date
 
 
-def validateDate(date):
+def validate_date(date):
 
     """ Checks a string to determine if it is a valid date. Returns a boolean value,
     where True indicates the date is valid, and the date which was tested.

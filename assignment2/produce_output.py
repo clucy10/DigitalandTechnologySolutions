@@ -39,9 +39,9 @@ from postcode import centre_point
 from crimes_in_box import crimes_in_radius
 from plot_map import plot_map
 from validate_date import validate_date
-from postcode_validate import validate_postcode
+from validate_postcode import validate_postcode
 
-time_range = input("Enter a time range (0-12 months)"
+time_range = input("Enter a time range (0-12 months)")
 postcode = input("Enter a postcode:")
 radius = input("Please choose a 1, 2 or 5 mile radius:")
 date = input("Enter a date in the format YYYY-MM:")

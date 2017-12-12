@@ -1,5 +1,5 @@
 # validate postcode
-def validatePostcode(postcode):
+def validate_postcode(postcode):
 
     """ Checks a string to determine if it is a valid postcode. Return boolean value where
     True indicates the postcode is valid. """
