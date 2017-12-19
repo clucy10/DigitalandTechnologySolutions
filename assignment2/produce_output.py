@@ -1,9 +1,11 @@
+
 from postcode import centre_point
 from crimes_in_radius import crimes_in_radius
 from postcode_validate import validate_postcode
 from validate_date import validate_date
+import sys
 
-if __name__ == '__main__':
+def produce_output():
     """
     Takes the postcode input and returns a nested list of strings
     from the csv file of crimes in radius. This is then written to the
@@ -40,3 +42,23 @@ if __name__ == '__main__':
             print("We cannot find your postcode.")
     else:
         print("Sorry, the details you provided were invalid!")
+        
+    quit = input("Quit? (Y/N)")
+    
+    try:
+        if quit.lower() == "y" or quit.lower() == "yes":
+            repeat = False
+        elif quit.lower() == "n" or quit.lower() == "no":
+            repeat = True
+
+    except ValueError():
+        print("Invalid input")
+        
+    if repeat == True:
+        produce_output()
+    else:
+        print(Quitting...)
+        sys.exit()
+
+if __name__ == "__main__":
+    produce_output()
