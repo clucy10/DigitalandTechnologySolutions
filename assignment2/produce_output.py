@@ -47,18 +47,16 @@ def produce_output():
     
     try:
         if quit.lower() == "y" or quit.lower() == "yes":
-            repeat = False
+            print(Quitting...)
+            sys.exit()
         elif quit.lower() == "n" or quit.lower() == "no":
-            repeat = True
-
+            produce_output()
+        else:
+            raise ValueError()
+            
     except ValueError():
         print("Invalid input")
-        
-    if repeat == True:
-        produce_output()
-    else:
-        print(Quitting...)
-        sys.exit()
+
 
 if __name__ == "__main__":
     produce_output()
